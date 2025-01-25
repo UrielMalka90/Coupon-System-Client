@@ -34,26 +34,27 @@ function SignInForm(): JSX.Element {
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = async (data: LoginRequestModel | RegisterRequestModel, isSignIn: boolean) => {
+  const onSubmit = (data: LoginRequestModel | RegisterRequestModel, isSignIn: boolean) => {
     try {
       if (isSignIn) {
         // SignIn logic
-        const res = await webApiService.loginApi(data as LoginRequestModel);
+        const res = webApiService.loginApi(data as LoginRequestModel);
         notificationService.successPlainText("Logged in successfully");
         dispatch(loginAction(res));
         timer();
         navigate("/store");
       } else {
         // SignUp logic
-        await webApiService.registerApi(data as RegisterRequestModel);
+        webApiService.registerApi(data as RegisterRequestModel);
         notificationService.successPlainText("Registered successfully");
       }
     } catch (error) {
+      console.log(error)
       if (axios.isAxiosError<ErrorDetails>(error)) {
-        console.log("error.response?.data " + error);
+        console.log("The error is: " + error);
         notificationService.errorAxiosApiCall(error);
       } else {
-        console.error('Unknown error:', error);
+        console.error('Unknown error:' + error);
         notificationService.errorPlainText('An unknown error occurred');
       }
     }

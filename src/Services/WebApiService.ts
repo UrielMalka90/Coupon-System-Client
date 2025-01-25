@@ -10,6 +10,7 @@ class WebApiService {
   }
 
   public async registerApi(registerRequestModel: RegisterRequestModel): Promise<void> {
+    console.log(registerRequestModel)
     await axios.post(globalUrlService.getBaseUrl() + "register", registerRequestModel)
 
   }
