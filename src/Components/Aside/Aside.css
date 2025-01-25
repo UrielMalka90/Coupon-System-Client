@@ -1,0 +1,7 @@
+.Aside {
+  display: inline-block;
+  width: 15%;
+	height: 80%;
+  vertical-align: top;
+  background-color: green;
+}

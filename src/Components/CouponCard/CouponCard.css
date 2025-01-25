@@ -1,0 +1,24 @@
+.CouponCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  border: 2px dashed #131313;
+  border-radius: 5px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.CouponCard p, .CouponCard span {
+  padding-left: 10px;
+}
+
+.CouponCard button {
+  margin: 10px auto;
+  background-color: green;
+}
+
+.red-border {
+  border: 2px dashed red;
+}

@@ -1,0 +1,19 @@
+.SignInForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.SignInFormButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.SignInFormButtons button {
+  margin: 10px;
+}
